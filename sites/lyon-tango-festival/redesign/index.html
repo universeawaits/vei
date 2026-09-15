@@ -116,6 +116,7 @@
   header.site .wordmark{
     color:var(--ember);
     opacity:0;
+    font-size:clamp(20px, 2.1vw, 26px);
   }
   header.site.past-hero .wordmark{opacity:1;}
   @media (prefers-reduced-motion: no-preference){
@@ -132,6 +133,7 @@
     flex:1 1 auto;
     min-width:0;
     justify-content:flex-end;
+    overflow:hidden;
   }
   nav.links > a{
     font-size:clamp(10px, 0.85vw, 11.5px);
@@ -197,14 +199,28 @@
   }
   .drop-panel a:hover{background:color-mix(in srgb, var(--ember) 12%, transparent); color:var(--ember);}
 
-  .lang{
-    font-size:clamp(10px, 0.85vw, 11.5px);
+  .lang-select{
+    flex:none;
+    appearance:none;
+    -webkit-appearance:none;
+    font-family:inherit;
+    font-size:11px;
     font-weight:700;
     letter-spacing:1px;
     color:var(--paper-on-ink-soft);
-    white-space:nowrap;
-    flex:none;
+    background:transparent;
+    border:1px solid color-mix(in srgb, var(--paper-on-ink) 22%, transparent);
+    border-radius:999px;
+    padding:6px 26px 6px 12px;
+    cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b9b6cf' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    background-size:10px 7px;
   }
+  .lang-select:hover{color:var(--paper-on-ink); border-color:color-mix(in srgb, var(--paper-on-ink) 40%, transparent);}
+  .lang-select:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
+  .lang-select option{color:#1c1a17; background:#fff;}
 
   .btn{
     display:inline-flex;
@@ -352,28 +368,6 @@
   }
 
   /* ---------- anniversary message ---------- */
-  .lang-switch{
-    display:flex;
-    gap:6px;
-  }
-  .lang-switch button{
-    font-family:inherit;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:var(--ink-on-paper-soft);
-    background:transparent;
-    border:1px solid var(--rule);
-    border-radius:999px;
-    padding:6px 14px;
-    cursor:pointer;
-  }
-  .lang-switch button.active{
-    background:var(--ember);
-    border-color:var(--ember);
-    color:#fff;
-  }
   .anniversary-copy p{
     font-size:16.5px;
     line-height:1.75;
@@ -638,12 +632,21 @@
       </details>
       <a href="#dj">DJ</a>
       <a href="#schedule">Schedule &amp; Location</a>
-      <a href="#stay">Stay</a>
-      <a href="#passes">Passes</a>
-      <a href="#partners">Partners</a>
-      <span class="lang">EN <span aria-hidden="true">·</span> FR <span aria-hidden="true">·</span> ES</span>
+      <details class="nav-drop">
+        <summary>More</summary>
+        <div class="drop-panel">
+          <a href="#stay">Stay</a>
+          <a href="#passes">Passes</a>
+          <a href="#partners">Partners</a>
+        </div>
+      </details>
     </nav>
     <a class="btn btn-jade" href="#tickets">Tickets</a>
+    <select class="lang-select" id="site-lang" aria-label="Language">
+      <option value="en" selected>EN</option>
+      <option value="fr">FR</option>
+      <option value="es">ES</option>
+    </select>
   </div>
 </header>
 
@@ -676,11 +679,6 @@
     <div class="section-head">
       <div>
         <h2>10th Anniversary</h2>
-      </div>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-lang-btn="en" class="active">EN</button>
-        <button type="button" data-lang-btn="fr">FR</button>
-        <button type="button" data-lang-btn="es">ES</button>
       </div>
     </div>
     <div class="anniversary-copy">
@@ -889,13 +887,15 @@
   io.observe(hero);
 })();
 
-document.querySelectorAll('[data-lang-btn]').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var lang = btn.getAttribute('data-lang-btn');
-    document.querySelectorAll('[data-lang-btn]').forEach(function(b){ b.classList.toggle('active', b === btn); });
-    document.querySelectorAll('[data-lang]').forEach(function(block){ block.hidden = block.getAttribute('data-lang') !== lang; });
-  });
-});
+var siteLang = document.getElementById('site-lang');
+function applyLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(function(block){ block.hidden = block.getAttribute('data-lang') !== lang; });
+  document.documentElement.setAttribute('lang', lang);
+}
+if(siteLang){
+  siteLang.addEventListener('change', function(){ applyLang(siteLang.value); });
+  applyLang(siteLang.value);
+}
 
 function positionDropPanel(details){
   var summary = details.querySelector('summary');
