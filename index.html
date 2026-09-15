@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>vei — site rebuild toolkit</title>
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --fg: #1c1a17;
+    --muted: #6b6459;
+    --accent: #a8321e;
+    --card: #ffffff;
+    --border: #e5e1d8;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15130f;
+      --fg: #f1ede4;
+      --muted: #a39a89;
+      --accent: #e2673f;
+      --card: #201d17;
+      --border: #322d24;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15130f;
+    --fg: #f1ede4;
+    --muted: #a39a89;
+    --accent: #e2673f;
+    --card: #201d17;
+    --border: #322d24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 3rem 1.25rem 4rem;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 0.4rem; letter-spacing: -0.01em; }
+  p.lede { color: var(--muted); margin: 0 0 2.5rem; line-height: 1.5; }
+  ul.sites { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  li.site {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+  }
+  li.site a { color: var(--fg); text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+  li.site a:hover { color: var(--accent); }
+  li.site p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.8rem; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>vei</h1>
+  <p class="lede">A toolkit for rebuilding existing websites into cleaner, prettier static versions — tooling, components, and design findings collected as we go.</p>
+  <ul class="sites">
+    <li class="site">
+      <a href="sites/lyon-tango-festival/src/">Lyon Tango Festival — rebuild</a>
+      <p>An original reinterpretation of lyontangofestival.com's layout and brand direction: refreshed typography, structure, and visuals.</p>
+    </li>
+  </ul>
+  <footer>Source: <a href="https://github.com/universeawaits/vei">github.com/universeawaits/vei</a></footer>
+</main>
+</body>
+</html>

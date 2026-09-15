@@ -1,0 +1,13 @@
+{
+  "name": "vei-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable Playwright research scraper for the vei site-rebuild toolkit",
+  "main": "scrape.js",
+  "scripts": {
+    "scrape": "node scrape.js"
+  },
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}
