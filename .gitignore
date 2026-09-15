@@ -6,3 +6,8 @@ _site/
 sites/*/research/raw-html/
 sites/*/research/screenshots/
 sites/*/research/assets/
+
+# real photos/logo/brand assets the user supplied directly — kept local,
+# not committed to the public repo (real people's likenesses + third-party
+# brand assets, unverifiable authorization to redistribute publicly)
+sites/*/redesign/assets/photos/
