@@ -90,12 +90,21 @@
 
   /* ---------- header ---------- */
   header.site{
-    position:sticky;
+    position:fixed;
     top:env(safe-area-inset-top, 0px);
+    left:0;
+    right:0;
     z-index:40;
+    background:transparent;
+    border-bottom:1px solid transparent;
+  }
+  header.site.past-hero{
     background:color-mix(in srgb, var(--ink) 88%, transparent);
     backdrop-filter: blur(10px);
-    border-bottom:1px solid color-mix(in srgb, var(--paper-on-ink) 12%, transparent);
+    border-bottom-color:color-mix(in srgb, var(--paper-on-ink) 12%, transparent);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    header.site{transition:background .3s ease, border-color .3s ease;}
   }
   .nav-row{
     display:flex;
@@ -154,8 +163,8 @@
   nav.links a:focus-visible{outline:2px solid var(--ember); outline-offset:2px; border-radius:2px;}
 
   .nav-drop{position:relative; flex:none;}
-  .nav-drop summary{
-    list-style:none;
+  .nav-drop-trigger{
+    font-family:inherit;
     cursor:pointer;
     display:inline-flex;
     align-items:center;
@@ -165,42 +174,58 @@
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--paper-on-ink-soft);
+    background:transparent;
+    border:none;
     padding:8px 8px;
     border-radius:4px;
     white-space:nowrap;
     transition:background .15s ease, color .15s ease;
   }
-  .nav-drop summary::-webkit-details-marker{display:none;}
-  .nav-drop summary::after{content:"⌄"; font-size:14px; line-height:1;}
-  .nav-drop summary:hover,
-  .nav-drop[open] > summary{background:var(--ember); color:#fff;}
-  .nav-drop summary:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
+  .nav-drop-trigger .chev{font-size:14px; line-height:1;}
+  .nav-drop:hover .nav-drop-trigger,
+  .nav-drop:focus-within .nav-drop-trigger{background:var(--ember); color:#fff;}
+  .nav-drop-trigger:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
   .drop-panel{
     position:fixed;
     top:0;
     left:0;
-    min-width:240px;
+    min-width:260px;
     max-height:60vh;
     overflow-y:auto;
-    background:var(--card);
-    border:1px solid var(--rule);
-    border-radius:10px;
-    box-shadow:var(--shadow);
-    padding:8px;
+    background:var(--ink);
+    padding:6px 0;
     display:flex;
     flex-direction:column;
-    gap:2px;
+    opacity:0;
+    visibility:hidden;
+    transform:scaleY(0.92) translateY(-4px);
+    transform-origin:top;
+    transition:opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+    pointer-events:none;
     z-index:50;
+  }
+  .nav-drop:hover .drop-panel,
+  .nav-drop:focus-within .drop-panel{
+    opacity:1;
+    visibility:visible;
+    transform:scaleY(1) translateY(0);
+    pointer-events:auto;
+    transition:opacity .18s ease, transform .18s ease;
   }
   .drop-panel a{
     display:block;
-    color:var(--ink-on-paper);
-    font-size:13px;
-    font-weight:600;
-    padding:8px 10px;
-    border-radius:6px;
+    color:var(--paper-on-ink);
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:13px 20px;
+    white-space:nowrap;
   }
-  .drop-panel a:hover{background:color-mix(in srgb, var(--ember) 12%, transparent); color:var(--ember);}
+  .drop-panel a:hover, .drop-panel a:focus-visible{background:var(--ember); color:#fff; outline:none;}
+  @media (prefers-reduced-motion: reduce){
+    .drop-panel{transition:opacity .12s linear;}
+  }
 
   .lang-select{
     flex:none;
@@ -263,6 +288,7 @@
     inset:-15%;
     z-index:0;
     pointer-events:none;
+    filter:url(#smoke-warp);
   }
   .hero-clouds span{
     position:absolute;
@@ -626,8 +652,8 @@
     <a class="wordmark" href="#hero">Lyon Tango Festival</a>
     <nav class="links">
       <a href="#about">General Info</a>
-      <details class="nav-drop">
-        <summary>Teachers</summary>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-trigger">Teachers <span class="chev" aria-hidden="true">⌄</span></button>
         <div class="drop-panel">
           <a href="#teachers">Lucila Cionci &amp; Joe Corbata</a>
           <a href="#teachers">Ariadna Naveira &amp; Fernando Sanchez</a>
@@ -639,23 +665,23 @@
           <a href="#teachers">Vanesa Villalba &amp; Facundo Piñero</a>
           <a href="#teachers">Agustina Piaggio &amp; Carlos Espinoza</a>
         </div>
-      </details>
-      <details class="nav-drop">
-        <summary>Live Music</summary>
+      </div>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-trigger">Live Music <span class="chev" aria-hidden="true">⌄</span></button>
         <div class="drop-panel">
           <a href="#live-music">Ensemble Sin Vuelta Orquesta</a>
         </div>
-      </details>
+      </div>
       <a href="#dj">DJ</a>
       <a href="#schedule">Schedule &amp; Location</a>
-      <details class="nav-drop">
-        <summary>More</summary>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-trigger">More <span class="chev" aria-hidden="true">⌄</span></button>
         <div class="drop-panel">
           <a href="#stay">Stay</a>
           <a href="#passes">Passes</a>
           <a href="#partners">Partners</a>
         </div>
-      </details>
+      </div>
     </nav>
     <a class="btn btn-jade" href="#tickets">Tickets</a>
     <select class="lang-select" id="site-lang" aria-label="Language">
@@ -665,6 +691,13 @@
     </select>
   </div>
 </header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="smoke-warp" x="-30%" y="-30%" width="160%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves="2" seed="7" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
 
 <section class="hero" id="hero">
   <div class="hero-clouds" aria-hidden="true">
@@ -920,22 +953,22 @@ if(siteLang){
   applyLang(siteLang.value);
 }
 
-function positionDropPanel(details){
-  var summary = details.querySelector('summary');
-  var panel = details.querySelector('.drop-panel');
-  if(!summary || !panel) return;
-  var rect = summary.getBoundingClientRect();
-  panel.style.top = (rect.bottom + 8) + 'px';
+function positionDropPanel(drop){
+  var trigger = drop.querySelector('.nav-drop-trigger');
+  var panel = drop.querySelector('.drop-panel');
+  if(!trigger || !panel) return;
+  var rect = trigger.getBoundingClientRect();
+  panel.style.top = (rect.bottom + 6) + 'px';
   var left = Math.min(rect.left, window.innerWidth - panel.offsetWidth - 8);
   panel.style.left = Math.max(8, left) + 'px';
 }
-document.querySelectorAll('.nav-drop').forEach(function(details){
-  details.addEventListener('toggle', function(){
-    if(details.open) positionDropPanel(details);
-  });
+var navDrops = document.querySelectorAll('.nav-drop');
+navDrops.forEach(function(drop){
+  drop.addEventListener('mouseenter', function(){ positionDropPanel(drop); });
+  drop.addEventListener('focusin', function(){ positionDropPanel(drop); });
 });
 window.addEventListener('resize', function(){
-  document.querySelectorAll('.nav-drop[open]').forEach(positionDropPanel);
+  navDrops.forEach(positionDropPanel);
 });
 </script>
 
