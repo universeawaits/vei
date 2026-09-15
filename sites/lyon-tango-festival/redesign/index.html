@@ -6,7 +6,7 @@
 <title>Lyon Tango Festival</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f6f2e9;
@@ -65,7 +65,7 @@
   body{
     background:var(--paper);
     color:var(--ink-on-paper);
-    font-family:"Manrope", -apple-system, "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing:antialiased;
     user-select:none;
     -webkit-user-select:none;
@@ -107,27 +107,95 @@
   .wordmark{
     font-family:"Great Vibes", cursive;
     font-size:clamp(28px, 3.4vw, 38px);
-    color:var(--paper-on-ink);
     line-height:1;
-    letter-spacing:0.5px;
+    letter-spacing:-1px;
+    color:var(--paper-on-ink);
   }
+  /* header's wordmark is redundant with the hero's big logo, so it only
+     appears once the hero has scrolled out of view (see IntersectionObserver below) */
+  header.site .wordmark{
+    color:var(--ember);
+    opacity:0;
+  }
+  header.site.past-hero .wordmark{opacity:1;}
+  @media (prefers-reduced-motion: no-preference){
+    header.site .wordmark{transition:opacity .45s ease;}
+  }
+
   nav.links{
     display:flex;
     align-items:center;
-    gap:clamp(14px, 2.4vw, 30px);
+    gap:clamp(10px, 2vw, 22px);
     flex-wrap:wrap;
   }
-  nav.links a{
+  nav.links > a{
     font-size:12.5px;
     font-weight:700;
     letter-spacing:1.6px;
     text-transform:uppercase;
     color:var(--paper-on-ink-soft);
+    padding:8px 10px;
+    border-radius:4px;
     transition:color .15s ease;
     white-space:nowrap;
   }
-  nav.links a:hover, nav.links a:focus-visible{color:var(--paper-on-ink);}
-  nav.links a:focus-visible{outline:2px solid var(--ember); outline-offset:4px; border-radius:2px;}
+  nav.links > a:hover, nav.links > a:focus-visible{color:var(--paper-on-ink);}
+  nav.links a:focus-visible{outline:2px solid var(--ember); outline-offset:2px; border-radius:2px;}
+
+  .nav-drop{position:relative;}
+  .nav-drop summary{
+    list-style:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--paper-on-ink-soft);
+    padding:8px 12px;
+    border-radius:4px;
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav-drop summary::-webkit-details-marker{display:none;}
+  .nav-drop summary::after{content:"⌄"; font-size:14px; line-height:1;}
+  .nav-drop summary:hover,
+  .nav-drop[open] > summary{background:var(--ember); color:#fff;}
+  .nav-drop summary:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
+  .drop-panel{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    min-width:240px;
+    max-height:60vh;
+    overflow-y:auto;
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    padding:8px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    z-index:50;
+  }
+  .drop-panel a{
+    display:block;
+    color:var(--ink-on-paper);
+    font-size:13px;
+    font-weight:600;
+    padding:8px 10px;
+    border-radius:6px;
+  }
+  .drop-panel a:hover{background:color-mix(in srgb, var(--ember) 12%, transparent); color:var(--ember);}
+
+  .lang{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    color:var(--paper-on-ink-soft);
+  }
 
   .btn{
     display:inline-flex;
@@ -182,37 +250,23 @@
     align-items:center;
     gap:18px;
   }
-  .eyebrow{
-    font-size:12.5px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:color-mix(in srgb, var(--paper-on-ink) 65%, transparent);
-  }
   .hero h1{
     font-family:"Great Vibes", cursive;
     font-weight:400;
-    font-size:clamp(56px, 11vw, 128px);
+    font-size:clamp(48px, 8vw, 84px);
     line-height:0.95;
+    letter-spacing:-1px;
     margin:0;
     text-wrap:balance;
-    background:linear-gradient(180deg, #fff, color-mix(in srgb, var(--paper-on-ink) 82%, transparent));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+    color:var(--ember);
   }
   .hero .dates{
-    font-family:"Fraunces", serif;
     font-weight:600;
     font-style:italic;
-    font-size:clamp(20px, 3vw, 30px);
+    font-size:clamp(18px, 2.6vw, 26px);
     color:var(--paper-on-ink);
-    letter-spacing:0.5px;
-  }
-  .hero .dates b{
-    font-style:normal;
-    color:var(--ember);
-    font-weight:700;
+    letter-spacing:0.3px;
+    margin:0;
   }
   .hero-actions{
     display:flex;
@@ -236,25 +290,17 @@
     margin-bottom:clamp(28px, 4vw, 44px);
     flex-wrap:wrap;
   }
-  .kicker{
-    font-size:12.5px;
-    font-weight:800;
-    letter-spacing:2.4px;
-    text-transform:uppercase;
-    color:var(--ember);
-    margin:0 0 10px;
-  }
   h2{
-    font-family:"Fraunces", serif;
     font-weight:600;
-    font-size:clamp(30px, 4.2vw, 46px);
+    font-size:clamp(26px, 3.6vw, 38px);
+    letter-spacing:0.5px;
     margin:0;
     text-wrap:balance;
   }
   .lede{
     max-width:62ch;
-    font-size:17px;
-    line-height:1.65;
+    font-size:16px;
+    line-height:1.6;
     color:var(--ink-on-paper-soft);
     margin:0;
   }
@@ -265,24 +311,11 @@
     margin:0;
   }
 
-  /* ---------- about ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap:clamp(28px, 5vw, 64px);
-    align-items:start;
-  }
-  .about-copy p{
-    font-size:16.5px;
-    line-height:1.75;
-    color:var(--ink-on-paper-soft);
-    max-width:58ch;
-  }
+  /* ---------- general info ---------- */
   .stat-row{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     gap:16px;
-    margin-top:28px;
   }
   .stat{
     background:var(--card);
@@ -293,8 +326,9 @@
   }
   .stat b{
     display:block;
-    font-family:"Fraunces", serif;
-    font-size:28px;
+    font-size:26px;
+    font-weight:800;
+    font-variant-numeric:tabular-nums;
     color:var(--ember);
   }
   .stat span{
@@ -303,131 +337,42 @@
     text-transform:uppercase;
     color:var(--ink-on-paper-soft);
   }
-  .format-list{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-    border:1px solid var(--rule);
-    border-radius:16px;
-    overflow:hidden;
-    background:var(--card);
-    box-shadow:var(--shadow);
+  .collab{
+    margin:20px 0 0;
+    font-size:14.5px;
+    color:var(--ink-on-paper-soft);
   }
-  .format-list .row{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:16px 20px;
-    border-bottom:1px solid var(--rule);
-  }
-  .format-list .row:last-child{border-bottom:none;}
-  .format-list .dot{
-    width:9px;height:9px;border-radius:50%;
-    background:var(--jade);
-    flex:none;
-  }
-  .format-list .row b{font-size:14.5px; font-weight:700;}
-  .format-list .row span{font-size:13.5px; color:var(--ink-on-paper-soft); margin-left:auto; text-align:right;}
 
-  /* ---------- artists ---------- */
+  /* ---------- teachers / live music ---------- */
   .artist-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
-    gap:18px;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:14px;
   }
   .artist-card{
     background:var(--card);
     border:1px solid var(--rule);
-    border-radius:18px;
-    padding:22px;
+    border-radius:16px;
+    padding:16px 18px;
     box-shadow:var(--shadow);
     display:flex;
-    flex-direction:column;
-    gap:12px;
+    align-items:center;
+    gap:14px;
   }
   .avatar{
-    width:52px;height:52px;border-radius:50%;
+    flex:none;
+    width:44px;height:44px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    font-family:"Fraunces", serif;
-    font-weight:600;
-    font-size:15px;
+    font-weight:700;
+    font-size:13px;
     color:#fff;
     background:linear-gradient(155deg, var(--ember), var(--violet));
   }
   .artist-card h3{
-    font-family:"Fraunces", serif;
-    font-size:19px;
+    font-size:15.5px;
     font-weight:600;
     margin:0;
     text-wrap:balance;
-  }
-  .artist-card p{
-    font-size:14px;
-    line-height:1.55;
-    color:var(--ink-on-paper-soft);
-    margin:0;
-  }
-  .tag{
-    align-self:flex-start;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:var(--jade);
-    background:color-mix(in srgb, var(--jade) 14%, transparent);
-    padding:5px 10px;
-    border-radius:999px;
-  }
-
-  /* ---------- schedule ---------- */
-  .schedule{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
-  }
-  .day-card{
-    background:var(--card);
-    border:1px solid var(--rule);
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-  }
-  .day-card .day-head{
-    background:var(--ink);
-    color:var(--paper-on-ink);
-    padding:16px 18px;
-  }
-  .day-card .day-head .dow{
-    font-family:"Fraunces", serif;
-    font-size:20px;
-    font-weight:600;
-  }
-  .day-card .day-head .ddate{
-    font-size:12px;
-    color:var(--paper-on-ink-soft);
-    letter-spacing:.5px;
-  }
-  .day-card .slots{
-    padding:6px 0;
-  }
-  .slot{
-    padding:12px 18px;
-    border-bottom:1px solid var(--rule);
-  }
-  .slot:last-child{border-bottom:none;}
-  .slot time{
-    display:block;
-    font-variant-numeric:tabular-nums;
-    font-size:12px;
-    font-weight:700;
-    color:var(--ember);
-    letter-spacing:.5px;
-  }
-  .slot p{
-    margin:4px 0 0;
-    font-size:13.5px;
-    color:var(--ink-on-paper-soft);
-    line-height:1.4;
   }
 
   /* ---------- venue ---------- */
@@ -436,6 +381,7 @@
     grid-template-columns:0.9fr 1.1fr;
     gap:clamp(28px, 5vw, 64px);
     align-items:center;
+    margin-top:clamp(28px, 4vw, 44px);
   }
   .venue-card{
     background:var(--ink);
@@ -458,18 +404,13 @@
   }
   .venue-card address{
     font-style:normal;
-    font-family:"Fraunces", serif;
-    font-size:22px;
+    font-weight:600;
+    font-size:20px;
     line-height:1.4;
-  }
-  .venue-copy p{
-    font-size:16px;
-    line-height:1.7;
-    color:var(--ink-on-paper-soft);
   }
   .venue-copy ul{
     list-style:none;
-    margin:20px 0 0;
+    margin:0;
     padding:0;
     display:flex;
     flex-direction:column;
@@ -500,7 +441,6 @@
     flex-wrap:wrap;
   }
   .cta h2{color:inherit;}
-  .cta p{color:color-mix(in srgb, var(--jade-ink) 82%, transparent); max-width:46ch; margin:8px 0 0;}
   .cta .btn-ghost{border-color:color-mix(in srgb, var(--jade-ink) 45%, transparent); color:var(--jade-ink);}
 
   /* ---------- footer ---------- */
@@ -545,13 +485,11 @@
   }
 
   @media (max-width: 860px){
-    .about-grid, .venue{grid-template-columns:1fr;}
-    .schedule{grid-template-columns:repeat(2, 1fr);}
+    .venue{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
-    .stat-row{grid-template-columns:1fr 1fr 1fr;}
   }
   @media (max-width: 520px){
-    .schedule{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     .cta{flex-direction:column; align-items:flex-start;}
   }
@@ -569,23 +507,41 @@
     <div class="wordmark">Lyon Tango Festival</div>
     <nav class="links">
       <a href="#about">General Info</a>
-      <a href="#artists">Artists</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#venue">Venue</a>
-      <a href="#contact">Contact</a>
+      <details class="nav-drop">
+        <summary>Teachers</summary>
+        <div class="drop-panel">
+          <a href="#teachers">Lucila Cionci &amp; Joe Corbata</a>
+          <a href="#teachers">Ariadna Naveira &amp; Fernando Sanchez</a>
+          <a href="#teachers">Monica Romero &amp; Omar Ocampo</a>
+          <a href="#teachers">Juana Sepulveda &amp; Chicho Frumboli</a>
+          <a href="#teachers">Indira Hiayes &amp; Rodrigo Palacios</a>
+          <a href="#teachers">Virginia Gomez &amp; Christian Marquez</a>
+          <a href="#teachers">Roxana Suarez &amp; Dante Sanchez</a>
+          <a href="#teachers">Vanesa Villalba &amp; Facundo Piñero</a>
+          <a href="#teachers">Agustina Piaggio &amp; Carlos Espinoza</a>
+        </div>
+      </details>
+      <details class="nav-drop">
+        <summary>Live Music</summary>
+        <div class="drop-panel">
+          <a href="#live-music">Ensemble Sin Vuelta Orquesta</a>
+        </div>
+      </details>
+      <a href="#dj">DJ</a>
+      <a href="#schedule">Schedule &amp; Location</a>
+      <span class="lang">EN <span aria-hidden="true">/</span> FR</span>
     </nav>
     <a class="btn btn-jade" href="#tickets">Tickets</a>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="wrap hero-inner">
-    <p class="eyebrow">A weekend of Argentine tango, Lyon</p>
     <h1>Lyon Tango<br/>Festival</h1>
-    <p class="dates">Four days, one dance floor — <b>21–24 May 2026</b></p>
+    <p class="dates">Dates to be announced</p>
     <div class="hero-actions">
-      <a class="btn btn-jade" href="#tickets">Get your pass</a>
-      <a class="btn btn-ghost" href="#schedule">See the schedule</a>
+      <a class="btn btn-jade" href="#tickets">Tickets</a>
+      <a class="btn btn-ghost" href="#schedule">Schedule &amp; Location</a>
     </div>
     <svg class="hero-badge" viewBox="0 0 120 120" role="img" aria-label="Lyon Tango Festival emblem">
       <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55" style="color:#f3efe4"/>
@@ -593,7 +549,7 @@
       <path d="M60 30 C 44 30 34 42 34 56 C 34 74 52 84 60 94 C 68 84 86 74 86 56 C 86 42 76 30 60 30 Z"
             fill="none" stroke="#ef4361" stroke-width="1.6" opacity="0.9" />
       <path d="M46 58 Q60 40 74 58" fill="none" stroke="#ef4361" stroke-width="1.6" opacity="0.9"/>
-      <text x="60" y="66" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="600" fill="#f3efe4">LTF</text>
+      <text x="60" y="66" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#f3efe4">LTF</text>
     </svg>
   </div>
 </section>
@@ -602,67 +558,60 @@
   <section id="about" class="wrap">
     <div class="section-head">
       <div>
-        <p class="kicker">General Info</p>
-        <h2>A festival built around the dance,<br/>not the stage.</h2>
+        <h2>General Info</h2>
       </div>
     </div>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>Every spring, dancers from across Europe and beyond gather in Lyon for four days of workshops, milongas, and live orchestras. The format stays close to the tradition it celebrates: small classes, a proper wooden floor, and evenings that run long.</p>
-        <p>Days are split between technique-focused workshops with visiting couples and open social dancing after dark — no performances-only lineup, no rushed rotations. The festival is organised with TNT Lyon Tango, the local school that keeps the city's tango scene running year-round.</p>
-        <div class="format-list">
-          <div class="row"><span class="dot"></span><b>Workshops</b><span>Small groups, all levels welcome</span></div>
-          <div class="row"><span class="dot"></span><b>Milongas</b><span>Social dancing, four nights running</span></div>
-          <div class="row"><span class="dot"></span><b>Live orchestra</b><span>One full live-music set</span></div>
-          <div class="row"><span class="dot"></span><b>Resident DJs</b><span>Traditional tandas after midnight</span></div>
-        </div>
-      </div>
+    <div class="stat-row">
+      <div class="stat"><b>9</b><span>Visiting couples</span></div>
+      <div class="stat"><b>1</b><span>Live ensemble</span></div>
+      <div class="stat"><b>2</b><span>Languages — EN / FR</span></div>
+    </div>
+    <p class="collab">In collaboration with TNT Lyon Tango and Lyon Tango Festival.</p>
+  </section>
+
+  <div class="wrap"><hr class="rule"/></div>
+
+  <section id="teachers" class="wrap">
+    <div class="section-head">
       <div>
-        <div class="stat-row">
-          <div class="stat"><b>4</b><span>Days</span></div>
-          <div class="stat"><b>8+</b><span>Visiting couples</span></div>
-          <div class="stat"><b>1</b><span>Live orchestra</span></div>
-        </div>
+        <h2>Teachers</h2>
       </div>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card"><div class="avatar">LC</div><h3>Lucila Cionci &amp; Joe Corbata</h3></div>
+      <div class="artist-card"><div class="avatar">AN</div><h3>Ariadna Naveira &amp; Fernando Sanchez</h3></div>
+      <div class="artist-card"><div class="avatar">MR</div><h3>Monica Romero &amp; Omar Ocampo</h3></div>
+      <div class="artist-card"><div class="avatar">JS</div><h3>Juana Sepulveda &amp; Chicho Frumboli</h3></div>
+      <div class="artist-card"><div class="avatar">IH</div><h3>Indira Hiayes &amp; Rodrigo Palacios</h3></div>
+      <div class="artist-card"><div class="avatar">VG</div><h3>Virginia Gomez &amp; Christian Marquez</h3></div>
+      <div class="artist-card"><div class="avatar">RS</div><h3>Roxana Suarez &amp; Dante Sanchez</h3></div>
+      <div class="artist-card"><div class="avatar">VV</div><h3>Vanesa Villalba &amp; Facundo Piñero</h3></div>
+      <div class="artist-card"><div class="avatar">AP</div><h3>Agustina Piaggio &amp; Carlos Espinoza</h3></div>
     </div>
   </section>
 
   <div class="wrap"><hr class="rule"/></div>
 
-  <section id="artists" class="wrap">
+  <section id="live-music" class="wrap">
     <div class="section-head">
       <div>
-        <p class="kicker">Artists</p>
-        <h2>Visiting teachers &amp; performers</h2>
+        <h2>Live Music</h2>
       </div>
-      <p class="lede">A first look at the lineup — full bios and class topics land on each artist's page as they're confirmed.</p>
     </div>
     <div class="artist-grid">
-      <div class="artist-card">
-        <div class="avatar">AN</div>
-        <h3>Ariadna Naveira &amp; Fernando Sánchez</h3>
-        <p>Buenos Aires salon stylists known for close-embrace musicality and calm, unhurried lead-follow phrasing.</p>
-        <span class="tag">Workshops</span>
-      </div>
-      <div class="artist-card">
-        <div class="avatar">JC</div>
-        <h3>Juana Sepúlveda &amp; Chicho Frumboli</h3>
-        <p>One of the scene's most-watched partnerships — improvisation-driven, rhythmically playful, floor-craft focused.</p>
-        <span class="tag">Workshops</span>
-      </div>
-      <div class="artist-card">
-        <div class="avatar">RS</div>
-        <h3>Roxana Suárez &amp; Dante Sánchez</h3>
-        <p>Traditional milonguero style built for the social floor — precise, economical, built around connection.</p>
-        <span class="tag">Workshops</span>
-      </div>
-      <div class="artist-card">
-        <div class="avatar">SV</div>
-        <h3>Sin Vuelta Orquesta</h3>
-        <p>A young ensemble reworking golden-age tango repertoire for a full live set on the festival's closing night.</p>
-        <span class="tag">Live music</span>
+      <div class="artist-card"><div class="avatar">SV</div><h3>Ensemble Sin Vuelta Orquesta</h3></div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"/></div>
+
+  <section id="dj" class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>DJ</h2>
       </div>
     </div>
+    <p class="lede">Lineup to be announced.</p>
   </section>
 
   <div class="wrap"><hr class="rule"/></div>
@@ -670,48 +619,10 @@
   <section id="schedule" class="wrap">
     <div class="section-head">
       <div>
-        <p class="kicker">Schedule</p>
-        <h2>Four days, at a glance</h2>
-      </div>
-      <p class="lede">A representative running order — exact times and rooms are confirmed closer to the festival and shared with your ticket.</p>
-    </div>
-    <div class="schedule">
-      <div class="day-card">
-        <div class="day-head"><div class="dow">Thursday</div><div class="ddate">21 May</div></div>
-        <div class="slots">
-          <div class="slot"><time>19:00</time><p>Opening milonga &amp; welcome tanda</p></div>
-          <div class="slot"><time>21:30</time><p>Late social dancing</p></div>
-        </div>
-      </div>
-      <div class="day-card">
-        <div class="day-head"><div class="dow">Friday</div><div class="ddate">22 May</div></div>
-        <div class="slots">
-          <div class="slot"><time>16:45</time><p>Technique workshop, level 2</p></div>
-          <div class="slot"><time>18:15</time><p>Technique workshop, level 3</p></div>
-          <div class="slot"><time>22:00</time><p>Milonga with resident DJ</p></div>
-        </div>
-      </div>
-      <div class="day-card">
-        <div class="day-head"><div class="dow">Saturday</div><div class="ddate">23 May</div></div>
-        <div class="slots">
-          <div class="slot"><time>15:00</time><p>Partner-work intensive</p></div>
-          <div class="slot"><time>20:30</time><p>Live orchestra set</p></div>
-          <div class="slot"><time>23:00</time><p>Grand milonga</p></div>
-        </div>
-      </div>
-      <div class="day-card">
-        <div class="day-head"><div class="dow">Sunday</div><div class="ddate">24 May</div></div>
-        <div class="slots">
-          <div class="slot"><time>16:45</time><p>Closing workshop</p></div>
-          <div class="slot"><time>19:00</time><p>Farewell milonga</p></div>
-        </div>
+        <h2>Schedule &amp; Location</h2>
       </div>
     </div>
-  </section>
-
-  <div class="wrap"><hr class="rule"/></div>
-
-  <section id="venue" class="wrap">
+    <p class="lede">Full timetable to be announced closer to the festival.</p>
     <div class="venue">
       <div class="venue-card">
         <svg class="pin" viewBox="0 0 44 44" role="img" aria-label="Venue pin">
@@ -724,11 +635,8 @@
           69005 Lyon, France
         </address>
       </div>
-      <div class="venue-copy">
-        <p class="kicker">Venue</p>
-        <h2>One room, four days</h2>
-        <p>The festival runs out of a single sprung wooden floor in the 5th arrondissement — workshops by day, milongas by night, no venue-hopping between sessions.</p>
-        <ul class="selectable">
+      <div class="venue-copy selectable">
+        <ul>
           <li><span class="k">Address</span><span>Salle des fêtes de La Garenne, 60 avenue Général Eisenhower, 69005 Lyon</span></li>
           <li><span class="k">Email</span><span>tangopasion19@gmail.com</span></li>
           <li><span class="k">WhatsApp</span><span>+33 6 16 18 41 15</span></li>
@@ -739,11 +647,8 @@
 
   <div class="wrap" id="tickets" style="padding-block-end:0;">
     <div class="cta">
-      <div>
-        <h2>Passes for every visit</h2>
-        <p>Full festival, single-day, and evening-only milonga passes — all include entry to the live orchestra night.</p>
-      </div>
-      <a class="btn btn-ghost" href="#contact">Ask about passes</a>
+      <div><h2>Tickets</h2></div>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
     </div>
   </div>
 </main>
@@ -753,14 +658,15 @@
     <div class="footer-grid">
       <div class="col">
         <div class="wordmark">Lyon Tango Festival</div>
-        <p>Organised with TNT Lyon Tango — the school keeping Lyon's tango scene dancing year-round.</p>
+        <p>In collaboration with TNT Lyon Tango and Lyon Tango Festival.</p>
       </div>
       <div class="col">
         <h4>Explore</h4>
         <a href="#about">General Info</a>
-        <a href="#artists">Artists</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#venue">Venue &amp; Location</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#live-music">Live Music</a>
+        <a href="#dj">DJ</a>
+        <a href="#schedule">Schedule &amp; Location</a>
       </div>
       <div class="col selectable">
         <h4>Contact</h4>
@@ -775,6 +681,21 @@
     </div>
   </div>
 </footer>
+
+<noscript><style>header.site .wordmark{opacity:1;}</style></noscript>
+<script>
+(function(){
+  var header = document.querySelector('header.site');
+  var hero = document.getElementById('hero');
+  if(!header || !hero || !('IntersectionObserver' in window)){ if(header) header.classList.add('past-hero'); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      header.classList.toggle('past-hero', !entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+  io.observe(hero);
+})();
+</script>
 
 </body>
 </html>
