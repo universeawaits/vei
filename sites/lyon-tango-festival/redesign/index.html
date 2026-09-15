@@ -451,36 +451,64 @@
     color:var(--ink-on-paper-soft);
   }
 
-  /* ---------- teachers / live music ---------- */
-  .artist-grid{
+  /* ---------- teachers / live music / dj: photo cards ---------- */
+  .people-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
-    gap:14px;
+    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+    gap:18px;
   }
-  .artist-card{
-    background:var(--card);
-    border:1px solid var(--rule);
-    border-radius:16px;
-    padding:16px 18px;
+  .people-card{
+    position:relative;
+    display:block;
+    aspect-ratio:3 / 4;
+    border-radius:18px;
+    overflow:hidden;
     box-shadow:var(--shadow);
-    display:flex;
-    align-items:center;
-    gap:14px;
+    isolation:isolate;
   }
-  .avatar{
-    flex:none;
-    width:44px;height:44px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-weight:700;
-    font-size:13px;
+  .people-photo{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(120% 140% at 28% 18%, rgba(255,255,255,.22), transparent 55%),
+      linear-gradient(155deg, hsl(var(--hue, 340) 62% 48%), hsl(calc(var(--hue, 340) + 46) 58% 22%));
+    transition:filter .2s ease;
+  }
+  .people-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(6,8,20,.94) 0%, rgba(6,8,20,.25) 48%, transparent 68%);
+  }
+  .people-card:hover .people-photo, .people-card:focus-visible .people-photo{filter:brightness(1.1) saturate(1.08);}
+  .people-card:focus-visible{outline:2px solid var(--ember); outline-offset:3px;}
+  .people-info{
+    position:absolute;
+    left:16px; right:16px; bottom:14px;
+    z-index:2;
+  }
+  .people-name{
     color:#fff;
-    background:linear-gradient(155deg, var(--ember), var(--violet));
-  }
-  .artist-card h3{
-    font-size:15.5px;
-    font-weight:600;
-    margin:0;
+    font-size:18px;
+    font-weight:700;
+    line-height:1.25;
     text-wrap:balance;
+    margin:0;
+  }
+  .people-name .cap, .people-name .amp{
+    font-family:"Great Vibes", cursive;
+    font-weight:400;
+    font-size:1.55em;
+    line-height:0;
+    vertical-align:-0.18em;
+  }
+  .people-meta{
+    display:block;
+    margin-top:6px;
+    color:rgba(255,255,255,.72);
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
   }
 
   /* ---------- venue ---------- */
@@ -569,7 +597,13 @@
     box-shadow:var(--shadow);
     max-width:32rem;
   }
-  .partner-row .avatar{width:48px; height:48px; font-size:13px;}
+  .partner-row .avatar{
+    flex:none;
+    width:48px; height:48px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:13px; color:#fff;
+    background:linear-gradient(155deg, var(--ember), var(--violet));
+  }
   .partner-row h3{font-size:15.5px; font-weight:600; margin:0;}
   .partner-row p{font-size:13.5px; color:var(--ink-on-paper-soft); margin:2px 0 0;}
 
@@ -651,7 +685,6 @@
   <div class="wrap nav-row">
     <a class="wordmark" href="#hero">Lyon Tango Festival</a>
     <nav class="links">
-      <a href="#about">General Info</a>
       <div class="nav-drop">
         <button type="button" class="nav-drop-trigger">Teachers <span class="chev" aria-hidden="true">⌄</span></button>
         <div class="drop-panel">
@@ -747,22 +780,7 @@
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
-  <section id="about" class="wrap">
-    <div class="section-head">
-      <div>
-        <h2>General Info</h2>
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><b>9</b><span>Visiting couples</span></div>
-      <div class="stat"><b>1</b><span>Live ensemble</span></div>
-      <div class="stat"><b>3</b><span>Languages — EN / FR / ES</span></div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="teachers" class="wrap">
     <div class="section-head">
@@ -770,20 +788,73 @@
         <h2>Teachers</h2>
       </div>
     </div>
-    <div class="artist-grid">
-      <div class="artist-card"><div class="avatar">LC</div><h3>Lucila Cionci &amp; Joe Corbata</h3></div>
-      <div class="artist-card"><div class="avatar">AN</div><h3>Ariadna Naveira &amp; Fernando Sanchez</h3></div>
-      <div class="artist-card"><div class="avatar">MR</div><h3>Monica Romero &amp; Omar Ocampo</h3></div>
-      <div class="artist-card"><div class="avatar">JS</div><h3>Juana Sepulveda &amp; Chicho Frumboli</h3></div>
-      <div class="artist-card"><div class="avatar">IH</div><h3>Indira Hiayes &amp; Rodrigo Palacios</h3></div>
-      <div class="artist-card"><div class="avatar">VG</div><h3>Virginia Gomez &amp; Christian Marquez</h3></div>
-      <div class="artist-card"><div class="avatar">RS</div><h3>Roxana Suarez &amp; Dante Sanchez</h3></div>
-      <div class="artist-card"><div class="avatar">VV</div><h3>Vanesa Villalba &amp; Facundo Piñero</h3></div>
-      <div class="artist-card"><div class="avatar">AP</div><h3>Agustina Piaggio &amp; Carlos Espinoza</h3></div>
+    <p class="lede">Each card opens the teacher's full profile on the official festival site.</p>
+    <div class="people-grid">
+      <a class="people-card" style="--hue:350" href="https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">L</span>ucila Cionci <span class="amp">&amp;</span> Joe Corbata</p>
+          <span class="people-meta">Performing Saturday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:15" href="https://lyontangofestival.com/en/teachers/ariadna-neveri" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">A</span>riadna Naveira <span class="amp">&amp;</span> Fernando Sanchez</p>
+          <span class="people-meta">Performing Thursday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:265" href="https://lyontangofestival.com/en/teachers/soledad-larretapia-and" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">M</span>onica Romero <span class="amp">&amp;</span> Omar Ocampo</p>
+          <span class="people-meta">Performing Thursday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:210" href="https://lyontangofestival.com/en/teachers/juana-sepulveda-and" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">J</span>uana Sepulveda <span class="amp">&amp;</span> Chicho Frumboli</p>
+          <span class="people-meta">Performing Sunday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:320" href="https://lyontangofestival.com/en/teachers/indira-hiayes-and" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">I</span>ndira Hiayes <span class="amp">&amp;</span> Rodrigo Palacios</p>
+          <span class="people-meta">Performing Friday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:40" href="https://lyontangofestival.com/en/teachers/new-dancers-page-3" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">V</span>irginia Gomez <span class="amp">&amp;</span> Christian Marquez</p>
+          <span class="people-meta">Performing Sunday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:250" href="https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">R</span>oxana Suarez <span class="amp">&amp;</span> Dante Sanchez</p>
+          <span class="people-meta">Performing Friday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:5" href="https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">V</span>anesa Villalba <span class="amp">&amp;</span> Facundo Piñero</p>
+          <span class="people-meta">Performing Saturday</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:230" href="https://lyontangofestival.com/en/teachers/agustina-piaggio" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name"><span class="cap">A</span>gustina Piaggio <span class="amp">&amp;</span> Carlos Espinoza</p>
+        </div>
+      </a>
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="live-music" class="wrap">
     <div class="section-head">
@@ -791,12 +862,17 @@
         <h2>Live Music</h2>
       </div>
     </div>
-    <div class="artist-grid">
-      <div class="artist-card"><div class="avatar">SV</div><h3>Ensemble Sin Vuelta Orquesta</h3></div>
+    <div class="people-grid">
+      <a class="people-card" style="--hue:150" href="https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Ensemble Sin Vuelta Orquesta</p>
+          <span class="people-meta">Closing-night live set</span>
+        </div>
+      </a>
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="dj" class="wrap">
     <div class="section-head">
@@ -804,17 +880,52 @@
         <h2>DJ</h2>
       </div>
     </div>
-    <div class="pass-list">
-      <div class="row"><b>Thursday night</b><span>Rosita Lagos-Diaz</span></div>
-      <div class="row"><b>Friday night</b><span>Guillermo Monti</span></div>
-      <div class="row"><b>Saturday afternoon</b><span>Utku Küley</span></div>
-      <div class="row"><b>Saturday night</b><span>Diego Doigneau</span></div>
-      <div class="row"><b>Sunday afternoon</b><span>Gabbo Fresedo</span></div>
-      <div class="row"><b>Sunday night</b><span>Braulio Martos</span></div>
+    <div class="people-grid">
+      <a class="people-card" style="--hue:340" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Rosita Lagos-Diaz</p>
+          <span class="people-meta">Thursday night</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:25" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Guillermo Monti</p>
+          <span class="people-meta">Friday night</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:200" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Utku Küley</p>
+          <span class="people-meta">Saturday afternoon</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:270" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Diego Doigneau</p>
+          <span class="people-meta">Saturday night</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:330" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Gabbo Fresedo</p>
+          <span class="people-meta">Sunday afternoon</span>
+        </div>
+      </a>
+      <a class="people-card" style="--hue:230" href="https://lyontangofestival.com/en/dj" target="_blank" rel="noopener">
+        <div class="people-photo"></div>
+        <div class="people-info">
+          <p class="people-name">Braulio Martos</p>
+          <span class="people-meta">Sunday night</span>
+        </div>
+      </a>
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="schedule" class="wrap">
     <div class="section-head">
@@ -846,7 +957,6 @@
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="stay" class="wrap">
     <div class="section-head">
@@ -857,7 +967,6 @@
     <p class="lede">Recommended places to stay near the venue to be announced.</p>
   </section>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="passes" class="wrap">
     <div class="section-head">
@@ -879,7 +988,6 @@
     </div>
   </div>
 
-  <div class="wrap"><hr class="rule"/></div>
 
   <section id="partners" class="wrap">
     <div class="section-head">
@@ -906,7 +1014,6 @@
       </div>
       <div class="col">
         <h4>Explore</h4>
-        <a href="#about">General Info</a>
         <a href="#teachers">Teachers</a>
         <a href="#live-music">Live Music</a>
         <a href="#dj">DJ</a>
