@@ -165,6 +165,7 @@
     color:var(--paper-on-ink-soft);
     padding:8px 12px;
     border-radius:4px;
+    white-space:nowrap;
     transition:background .15s ease, color .15s ease;
   }
   .nav-drop summary::-webkit-details-marker{display:none;}
@@ -173,8 +174,8 @@
   .nav-drop[open] > summary{background:var(--ember); color:#fff;}
   .nav-drop summary:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
   .drop-panel{
-    position:absolute;
-    top:calc(100% + 8px);
+    position:fixed;
+    top:0;
     left:0;
     min-width:240px;
     max-height:60vh;
@@ -249,26 +250,26 @@
     position:absolute;
     border-radius:50%;
     filter:blur(46px);
-    opacity:0.6;
+    opacity:0.75;
   }
   .hero-clouds .cloud-a{
-    width:55%; height:75%; left:-8%; top:-12%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--violet) 70%, transparent), transparent 70%);
-    animation:drift-a 46s ease-in-out infinite;
+    width:60%; height:80%; left:-10%; top:-14%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--violet) 85%, transparent), transparent 70%);
+    animation:drift-a 22s ease-in-out infinite;
   }
   .hero-clouds .cloud-b{
-    width:60%; height:65%; right:-12%; top:-6%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember) 55%, transparent), transparent 70%);
-    animation:drift-b 54s ease-in-out infinite;
+    width:65%; height:70%; right:-14%; top:-8%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember) 70%, transparent), transparent 70%);
+    animation:drift-b 26s ease-in-out infinite;
   }
   .hero-clouds .cloud-c{
-    width:75%; height:55%; left:12%; bottom:-22%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember-2) 45%, transparent), transparent 70%);
-    animation:drift-c 62s ease-in-out infinite;
+    width:80%; height:60%; left:10%; bottom:-26%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember-2) 60%, transparent), transparent 70%);
+    animation:drift-c 30s ease-in-out infinite;
   }
-  @keyframes drift-a{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(6%, 4%) scale(1.08);}}
-  @keyframes drift-b{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-7%, 5%) scale(1.05);}}
-  @keyframes drift-c{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(4%, -6%) scale(1.1);}}
+  @keyframes drift-a{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(14%, 8%) scale(1.15);}}
+  @keyframes drift-b{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-16%, 10%) scale(1.1);}}
+  @keyframes drift-c{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(9%, -12%) scale(1.18);}}
   @media (prefers-reduced-motion: reduce){
     .hero-clouds span{animation:none;}
   }
@@ -293,7 +294,7 @@
   .hero h1{
     font-family:"Great Vibes", cursive;
     font-weight:400;
-    font-size:clamp(26px, 9.5vw, 88px);
+    font-size:clamp(30px, 11.5vw, 132px);
     line-height:0.95;
     letter-spacing:-1px;
     margin:0;
@@ -615,7 +616,7 @@
   </div>
   <div class="wrap hero-inner">
     <h1>Lyon Tango Festival</h1>
-    <p class="dates">Dates to be announced</p>
+    <p class="dates">13–17 May 2027</p>
     <div class="hero-actions">
       <a class="btn btn-jade" href="#tickets">Tickets</a>
       <a class="btn btn-ghost" href="#schedule">Schedule &amp; Location</a>
@@ -799,7 +800,7 @@
     entries.forEach(function(entry){
       header.classList.toggle('past-hero', !entry.isIntersecting);
     });
-  }, { threshold: 0 });
+  }, { threshold: 0, rootMargin: '-45% 0px 0px 0px' });
   io.observe(hero);
 })();
 
@@ -809,6 +810,24 @@ document.querySelectorAll('[data-lang-btn]').forEach(function(btn){
     document.querySelectorAll('[data-lang-btn]').forEach(function(b){ b.classList.toggle('active', b === btn); });
     document.querySelectorAll('[data-lang]').forEach(function(block){ block.hidden = block.getAttribute('data-lang') !== lang; });
   });
+});
+
+function positionDropPanel(details){
+  var summary = details.querySelector('summary');
+  var panel = details.querySelector('.drop-panel');
+  if(!summary || !panel) return;
+  var rect = summary.getBoundingClientRect();
+  panel.style.top = (rect.bottom + 8) + 'px';
+  var left = Math.min(rect.left, window.innerWidth - panel.offsetWidth - 8);
+  panel.style.left = Math.max(8, left) + 'px';
+}
+document.querySelectorAll('.nav-drop').forEach(function(details){
+  details.addEventListener('toggle', function(){
+    if(details.open) positionDropPanel(details);
+  });
+});
+window.addEventListener('resize', function(){
+  document.querySelectorAll('.nav-drop[open]').forEach(positionDropPanel);
 });
 </script>
 
