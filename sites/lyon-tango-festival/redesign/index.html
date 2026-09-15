@@ -101,7 +101,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:24px;
+    gap:clamp(10px, 2vw, 24px);
     padding-block:14px;
   }
   .wordmark{
@@ -127,22 +127,19 @@
   nav.links{
     display:flex;
     align-items:center;
-    gap:clamp(8px, 1.6vw, 18px);
+    gap:clamp(4px, 0.9vw, 12px);
     flex-wrap:nowrap;
     flex:1 1 auto;
     min-width:0;
-    overflow-x:auto;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
+    justify-content:flex-end;
   }
-  nav.links::-webkit-scrollbar{display:none;}
   nav.links > a{
-    font-size:12.5px;
+    font-size:clamp(10px, 0.85vw, 11.5px);
     font-weight:700;
-    letter-spacing:1.6px;
+    letter-spacing:1px;
     text-transform:uppercase;
     color:var(--paper-on-ink-soft);
-    padding:8px 10px;
+    padding:8px 7px;
     border-radius:4px;
     transition:color .15s ease;
     white-space:nowrap;
@@ -151,19 +148,19 @@
   nav.links > a:hover, nav.links > a:focus-visible{color:var(--paper-on-ink);}
   nav.links a:focus-visible{outline:2px solid var(--ember); outline-offset:2px; border-radius:2px;}
 
-  .nav-drop{position:relative;}
+  .nav-drop{position:relative; flex:none;}
   .nav-drop summary{
     list-style:none;
     cursor:pointer;
     display:inline-flex;
     align-items:center;
-    gap:6px;
-    font-size:12.5px;
+    gap:4px;
+    font-size:clamp(10px, 0.85vw, 11.5px);
     font-weight:700;
-    letter-spacing:1.6px;
+    letter-spacing:1px;
     text-transform:uppercase;
     color:var(--paper-on-ink-soft);
-    padding:8px 12px;
+    padding:8px 8px;
     border-radius:4px;
     white-space:nowrap;
     transition:background .15s ease, color .15s ease;
@@ -201,10 +198,12 @@
   .drop-panel a:hover{background:color-mix(in srgb, var(--ember) 12%, transparent); color:var(--ember);}
 
   .lang{
-    font-size:12px;
+    font-size:clamp(10px, 0.85vw, 11.5px);
     font-weight:700;
-    letter-spacing:1.2px;
+    letter-spacing:1px;
     color:var(--paper-on-ink-soft);
+    white-space:nowrap;
+    flex:none;
   }
 
   .btn{
