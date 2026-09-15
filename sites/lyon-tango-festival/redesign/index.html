@@ -501,6 +501,43 @@
     min-width:84px;
   }
 
+  /* ---------- passes / stay / partners ---------- */
+  .pass-list{
+    display:flex;
+    flex-direction:column;
+    border:1px solid var(--rule);
+    border-radius:16px;
+    overflow:hidden;
+    background:var(--card);
+    box-shadow:var(--shadow);
+  }
+  .pass-list .row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 22px;
+    border-bottom:1px solid var(--rule);
+  }
+  .pass-list .row:last-child{border-bottom:none;}
+  .pass-list .row b{font-size:15.5px; font-weight:700;}
+  .pass-list .row span{font-size:13.5px; color:var(--ink-on-paper-soft); text-align:right;}
+
+  .partner-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:18px 22px;
+    box-shadow:var(--shadow);
+    max-width:32rem;
+  }
+  .partner-row .avatar{width:48px; height:48px; font-size:13px;}
+  .partner-row h3{font-size:15.5px; font-weight:600; margin:0;}
+  .partner-row p{font-size:13.5px; color:var(--ink-on-paper-soft); margin:2px 0 0;}
+
   /* ---------- tickets cta ---------- */
   .cta{
     background:linear-gradient(135deg, var(--jade), color-mix(in srgb, var(--jade) 70%, var(--ink)));
@@ -602,6 +639,9 @@
       </details>
       <a href="#dj">DJ</a>
       <a href="#schedule">Schedule &amp; Location</a>
+      <a href="#stay">Stay</a>
+      <a href="#passes">Passes</a>
+      <a href="#partners">Partners</a>
       <span class="lang">EN <span aria-hidden="true">·</span> FR <span aria-hidden="true">·</span> ES</span>
     </nav>
     <a class="btn btn-jade" href="#tickets">Tickets</a>
@@ -674,7 +714,6 @@
       <div class="stat"><b>1</b><span>Live ensemble</span></div>
       <div class="stat"><b>3</b><span>Languages — EN / FR / ES</span></div>
     </div>
-    <p class="collab">In collaboration with TNT Lyon Tango and Lyon Tango Festival.</p>
   </section>
 
   <div class="wrap"><hr class="rule"/></div>
@@ -748,8 +787,35 @@
           <li><span class="k">Address</span><span>Salle des fêtes de La Garenne, 60 avenue Général Eisenhower, 69005 Lyon</span></li>
           <li><span class="k">Email</span><span>tangopasion19@gmail.com</span></li>
           <li><span class="k">WhatsApp</span><span>+33 6 16 18 41 15</span></li>
+          <li><span class="k">Getting there</span><span>Lyon–Saint Exupéry airport or Lyon Part-Dieu / Lyon Perrache train stations, then tram or metro to the 5th arrondissement.</span></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"/></div>
+
+  <section id="stay" class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Stay</h2>
+      </div>
+    </div>
+    <p class="lede">Recommended places to stay near the venue to be announced.</p>
+  </section>
+
+  <div class="wrap"><hr class="rule"/></div>
+
+  <section id="passes" class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Passes</h2>
+      </div>
+    </div>
+    <div class="pass-list">
+      <div class="row"><b>Full Festival Pass</b><span>All workshops, milongas &amp; the live orchestra night — price TBA</span></div>
+      <div class="row"><b>Milonga Pass</b><span>Evening social dancing only, all four nights — price TBA</span></div>
+      <div class="row"><b>Single Workshop</b><span>One class, drop-in — price TBA</span></div>
     </div>
   </section>
 
@@ -759,6 +825,23 @@
       <a class="btn btn-ghost" href="#contact">Contact</a>
     </div>
   </div>
+
+  <div class="wrap"><hr class="rule"/></div>
+
+  <section id="partners" class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Partners</h2>
+      </div>
+    </div>
+    <div class="partner-row">
+      <div class="avatar">TNT</div>
+      <div>
+        <h3>TNT Lyon Tango</h3>
+        <p>Co-organiser — the school keeping Lyon's tango scene running year-round.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer id="contact">
@@ -775,6 +858,9 @@
         <a href="#live-music">Live Music</a>
         <a href="#dj">DJ</a>
         <a href="#schedule">Schedule &amp; Location</a>
+        <a href="#stay">Stay</a>
+        <a href="#passes">Passes</a>
+        <a href="#partners">Partners</a>
       </div>
       <div class="col selectable">
         <h4>Contact</h4>
