@@ -118,9 +118,12 @@
     opacity:0;
     font-size:clamp(20px, 2.1vw, 26px);
   }
+  header.site .wordmark:hover, header.site .wordmark:focus-visible{
+    color:rgb(66, 130, 235);
+  }
   header.site.past-hero .wordmark{opacity:1;}
   @media (prefers-reduced-motion: no-preference){
-    header.site .wordmark{transition:opacity .45s ease;}
+    header.site .wordmark{transition:opacity .45s ease, color .2s ease;}
   }
 
   .wordmark{flex:none;}
@@ -264,29 +267,42 @@
   .hero-clouds span{
     position:absolute;
     border-radius:50%;
-    filter:blur(46px);
-    opacity:0.75;
+    filter:blur(44px);
+    opacity:0.8;
+    mix-blend-mode:screen;
   }
   .hero-clouds .cloud-a{
-    width:60%; height:80%; left:-10%; top:-14%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--violet) 85%, transparent), transparent 70%);
-    animation:drift-a 22s ease-in-out infinite;
+    width:62%; height:82%; left:-12%; top:-16%;
+    background:radial-gradient(ellipse at center, var(--violet), transparent 68%);
+    animation:drift-a 9s ease-in-out infinite, morph-a 6s ease-in-out infinite;
   }
   .hero-clouds .cloud-b{
-    width:65%; height:70%; right:-14%; top:-8%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember) 70%, transparent), transparent 70%);
-    animation:drift-b 26s ease-in-out infinite;
+    width:66%; height:72%; right:-16%; top:-10%;
+    background:radial-gradient(ellipse at center, var(--ember), transparent 68%);
+    animation:drift-b 11s ease-in-out infinite, morph-b 7s ease-in-out infinite;
   }
   .hero-clouds .cloud-c{
-    width:80%; height:60%; left:10%; bottom:-26%;
-    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember-2) 60%, transparent), transparent 70%);
-    animation:drift-c 30s ease-in-out infinite;
+    width:82%; height:62%; left:8%; bottom:-28%;
+    background:radial-gradient(ellipse at center, var(--ember-2), transparent 68%);
+    animation:drift-c 13s ease-in-out infinite, morph-c 8s ease-in-out infinite;
   }
   @keyframes drift-a{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(14%, 8%) scale(1.15);}}
   @keyframes drift-b{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-16%, 10%) scale(1.1);}}
   @keyframes drift-c{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(9%, -12%) scale(1.18);}}
+  @keyframes morph-a{
+    0%,100%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;}
+    50%{border-radius:58% 42% 39% 61% / 55% 61% 39% 45%;}
+  }
+  @keyframes morph-b{
+    0%,100%{border-radius:55% 45% 48% 52% / 62% 38% 62% 38%;}
+    50%{border-radius:40% 60% 62% 38% / 45% 55% 45% 55%;}
+  }
+  @keyframes morph-c{
+    0%,100%{border-radius:48% 52% 40% 60% / 50% 50% 62% 38%;}
+    50%{border-radius:60% 40% 58% 42% / 40% 60% 42% 58%;}
+  }
   @media (prefers-reduced-motion: reduce){
-    .hero-clouds span{animation:none;}
+    .hero-clouds .cloud-a, .hero-clouds .cloud-b, .hero-clouds .cloud-c{animation:none;}
   }
   .hero::before{
     content:"";
@@ -607,7 +623,7 @@
 
 <header class="site">
   <div class="wrap nav-row">
-    <div class="wordmark">Lyon Tango Festival</div>
+    <a class="wordmark" href="#hero">Lyon Tango Festival</a>
     <nav class="links">
       <a href="#about">General Info</a>
       <details class="nav-drop">
@@ -755,7 +771,14 @@
         <h2>DJ</h2>
       </div>
     </div>
-    <p class="lede">Lineup to be announced.</p>
+    <div class="pass-list">
+      <div class="row"><b>Thursday night</b><span>Rosita Lagos-Diaz</span></div>
+      <div class="row"><b>Friday night</b><span>Guillermo Monti</span></div>
+      <div class="row"><b>Saturday afternoon</b><span>Utku Küley</span></div>
+      <div class="row"><b>Saturday night</b><span>Diego Doigneau</span></div>
+      <div class="row"><b>Sunday afternoon</b><span>Gabbo Fresedo</span></div>
+      <div class="row"><b>Sunday night</b><span>Braulio Martos</span></div>
+    </div>
   </section>
 
   <div class="wrap"><hr class="rule"/></div>
