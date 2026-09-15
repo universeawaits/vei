@@ -35,27 +35,31 @@ function scriptName(first, last) {
   return `<span class="cap">${first[0]}</span>${first.slice(1)} ${last}`;
 }
 
+function capFirst(name) {
+  return `<span class="cap">${name[0]}</span>${name.slice(1)}`;
+}
+
 function header(base) {
   return `<header class="site past-hero">
   <div class="wrap nav-row">
     <a class="wordmark" href="${base}index.html#hero">Lyon Tango Festival</a>
     <nav class="links">
       <div class="nav-drop">
-        <button type="button" class="nav-drop-trigger">Teachers <span class="chev" aria-hidden="true">⌄</span></button>
+        <a href="${base}index.html#teachers" class="nav-drop-trigger">Teachers <span class="chev" aria-hidden="true">⌄</span></a>
         <div class="drop-panel">
-          ${TEACHERS.map(t => `<a href="${base}teachers/${t.slug}/">${t.first} ${t.last} &amp; ${t.partnerFirst} ${t.partnerLast}</a>`).join('\n          ')}
+          ${TEACHERS.map(t => `<a href="${base}teachers/${t.slug}/index.html">${t.first} ${t.last} &amp; ${t.partnerFirst} ${t.partnerLast}</a>`).join('\n          ')}
         </div>
       </div>
       <div class="nav-drop">
-        <button type="button" class="nav-drop-trigger">Live Music <span class="chev" aria-hidden="true">⌄</span></button>
+        <a href="${base}index.html#live-music" class="nav-drop-trigger">Live Music <span class="chev" aria-hidden="true">⌄</span></a>
         <div class="drop-panel">
-          ${LIVE_MUSIC.map(a => `<a href="${base}live-music/${a.slug}/">${a.name}</a>`).join('\n          ')}
+          ${LIVE_MUSIC.map(a => `<a href="${base}live-music/${a.slug}/index.html">${a.name}</a>`).join('\n          ')}
         </div>
       </div>
       <a href="${base}index.html#dj">DJ</a>
       <a href="${base}index.html#schedule">Schedule &amp; Location</a>
       <div class="nav-drop">
-        <button type="button" class="nav-drop-trigger">More <span class="chev" aria-hidden="true">⌄</span></button>
+        <a href="${base}index.html#stay" class="nav-drop-trigger">More <span class="chev" aria-hidden="true">⌄</span></a>
         <div class="drop-panel">
           <a href="${base}index.html#stay">Stay</a>
           <a href="${base}index.html#passes">Passes</a>
@@ -180,7 +184,7 @@ for (const a of LIVE_MUSIC) {
     backHref: `${base}index.html#live-music`,
     backLabel: 'Live Music',
     hue: a.hue,
-    nameHtml: a.name,
+    nameHtml: capFirst(a.name),
     meta: a.note,
     blurb: 'The festival\'s live orchestra, closing out the weekend with a full live set.',
   }));
@@ -195,7 +199,7 @@ for (const d of DJS) {
     backHref: `${base}index.html#dj`,
     backLabel: 'DJ',
     hue: d.hue,
-    nameHtml: d.name,
+    nameHtml: capFirst(d.name),
     meta: d.slot,
     blurb: 'Part of the resident DJ line-up spinning tandas across the festival\'s milongas.',
   }));

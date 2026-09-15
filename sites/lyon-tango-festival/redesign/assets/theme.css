@@ -1,43 +1,5 @@
   :root{
-    --paper:#f6f2e9;
-    --paper-2:#ece4d3;
-    --ink-on-paper:#241f3a;
-    --ink-on-paper-soft:#5a5270;
-    --ember:#c81f3a;
-    --ember-2:#9c1730;
-    --jade:#c9932f;
-    --jade-ink:#241f3a;
-    --violet:#3a5fae;
-    --rule:#d8cdb4;
-    --card:#ffffff;
-    --shadow: 0 20px 40px -24px rgba(36,31,58,0.35);
-    --cloud-blue:#33499c;
-    --cloud-red:#e0583f;
-
-    --ink:#0b0e26;
-    --ink-2:#141935;
-    --ink-3:#1c2247;
-    --paper-on-ink:#f3efe4;
-    --paper-on-ink-soft:#b9b6cf;
-  }
-
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#0b0e26;
-      --paper-2:#141935;
-      --ink-on-paper:#f3efe4;
-      --ink-on-paper-soft:#b9b6cf;
-      --ember:#ef4361;
-      --ember-2:#c81f3a;
-      --jade:#d9a24f;
-      --jade-ink:#1c2247;
-      --violet:#6f93d6;
-      --rule:#2a2f57;
-      --card:#141935;
-      --shadow: 0 20px 44px -22px rgba(0,0,0,0.6);
-    }
-  }
-  :root[data-theme="dark"]{
+    color-scheme: dark;
     --paper:#0b0e26;
     --paper-2:#141935;
     --ink-on-paper:#f3efe4;
@@ -50,6 +12,14 @@
     --rule:#2a2f57;
     --card:#141935;
     --shadow: 0 20px 44px -22px rgba(0,0,0,0.6);
+    --cloud-blue:#33499c;
+    --cloud-red:#e0583f;
+
+    --ink:#0b0e26;
+    --ink-2:#141935;
+    --ink-3:#1c2247;
+    --paper-on-ink:#f3efe4;
+    --paper-on-ink-soft:#b9b6cf;
   }
 
   *{box-sizing:border-box;}
@@ -174,8 +144,7 @@
     transition:background .15s ease, color .15s ease;
   }
   .nav-drop-trigger .chev{font-size:14px; line-height:1;}
-  .nav-drop:hover .nav-drop-trigger,
-  .nav-drop:focus-within .nav-drop-trigger{background:var(--ember); color:#fff;}
+  .nav-drop.is-open .nav-drop-trigger{background:var(--ember); color:#fff;}
   .nav-drop-trigger:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
   .drop-panel{
     position:fixed;
@@ -196,8 +165,7 @@
     pointer-events:none;
     z-index:50;
   }
-  .nav-drop:hover .drop-panel,
-  .nav-drop:focus-within .drop-panel{
+  .nav-drop.is-open .drop-panel{
     opacity:1;
     visibility:visible;
     transform:scaleY(1) translateY(0);

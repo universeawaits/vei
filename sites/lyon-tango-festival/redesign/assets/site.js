@@ -30,10 +30,27 @@ function positionDropPanel(drop){
   panel.style.left = Math.max(8, left) + 'px';
 }
 var navDrops = document.querySelectorAll('.nav-drop');
+var closeTimers = new Map();
+
+function openDrop(drop){
+  clearTimeout(closeTimers.get(drop));
+  navDrops.forEach(function(other){ if(other !== drop) other.classList.remove('is-open'); });
+  positionDropPanel(drop);
+  drop.classList.add('is-open');
+}
+function scheduleClose(drop){
+  clearTimeout(closeTimers.get(drop));
+  closeTimers.set(drop, setTimeout(function(){ drop.classList.remove('is-open'); }, 140));
+}
+
 navDrops.forEach(function(drop){
-  drop.addEventListener('mouseenter', function(){ positionDropPanel(drop); });
-  drop.addEventListener('focusin', function(){ positionDropPanel(drop); });
+  drop.addEventListener('mouseenter', function(){ openDrop(drop); });
+  drop.addEventListener('mouseleave', function(){ scheduleClose(drop); });
+  drop.addEventListener('focusin', function(){ openDrop(drop); });
+  drop.addEventListener('focusout', function(e){
+    if(!drop.contains(e.relatedTarget)) scheduleClose(drop);
+  });
 });
 window.addEventListener('resize', function(){
-  navDrops.forEach(positionDropPanel);
+  navDrops.forEach(function(drop){ if(drop.classList.contains('is-open')) positionDropPanel(drop); });
 });
