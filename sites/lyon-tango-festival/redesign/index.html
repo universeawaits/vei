@@ -122,12 +122,20 @@
     header.site .wordmark{transition:opacity .45s ease;}
   }
 
+  .wordmark{flex:none;}
+
   nav.links{
     display:flex;
     align-items:center;
-    gap:clamp(10px, 2vw, 22px);
-    flex-wrap:wrap;
+    gap:clamp(8px, 1.6vw, 18px);
+    flex-wrap:nowrap;
+    flex:1 1 auto;
+    min-width:0;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
   }
+  nav.links::-webkit-scrollbar{display:none;}
   nav.links > a{
     font-size:12.5px;
     font-weight:700;
@@ -138,6 +146,7 @@
     border-radius:4px;
     transition:color .15s ease;
     white-space:nowrap;
+    flex:none;
   }
   nav.links > a:hover, nav.links > a:focus-visible{color:var(--paper-on-ink);}
   nav.links a:focus-visible{outline:2px solid var(--ember); outline-offset:2px; border-radius:2px;}
@@ -225,18 +234,48 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative;
-    background:
-      radial-gradient(ellipse 60% 50% at 18% 8%, color-mix(in srgb, var(--violet) 55%, transparent), transparent 60%),
-      radial-gradient(ellipse 70% 60% at 85% 15%, color-mix(in srgb, var(--ember) 45%, transparent), transparent 65%),
-      radial-gradient(ellipse 90% 70% at 50% 100%, color-mix(in srgb, var(--ember-2) 30%, transparent), transparent 70%),
-      var(--ink);
+    background:var(--ink);
     color:var(--paper-on-ink);
     padding-block: clamp(64px, 10vw, 110px) clamp(48px, 8vw, 84px);
     overflow:hidden;
   }
+  .hero-clouds{
+    position:absolute;
+    inset:-15%;
+    z-index:0;
+    pointer-events:none;
+  }
+  .hero-clouds span{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(46px);
+    opacity:0.6;
+  }
+  .hero-clouds .cloud-a{
+    width:55%; height:75%; left:-8%; top:-12%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--violet) 70%, transparent), transparent 70%);
+    animation:drift-a 46s ease-in-out infinite;
+  }
+  .hero-clouds .cloud-b{
+    width:60%; height:65%; right:-12%; top:-6%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember) 55%, transparent), transparent 70%);
+    animation:drift-b 54s ease-in-out infinite;
+  }
+  .hero-clouds .cloud-c{
+    width:75%; height:55%; left:12%; bottom:-22%;
+    background:radial-gradient(ellipse at center, color-mix(in srgb, var(--ember-2) 45%, transparent), transparent 70%);
+    animation:drift-c 62s ease-in-out infinite;
+  }
+  @keyframes drift-a{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(6%, 4%) scale(1.08);}}
+  @keyframes drift-b{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-7%, 5%) scale(1.05);}}
+  @keyframes drift-c{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(4%, -6%) scale(1.1);}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-clouds span{animation:none;}
+  }
   .hero::before{
     content:"";
     position:absolute; inset:0;
+    z-index:1;
     background-image:
       repeating-linear-gradient(115deg, transparent 0 2px, color-mix(in srgb, #fff 3%, transparent) 2px 3px, transparent 3px 64px);
     opacity:.5;
@@ -244,6 +283,7 @@
   }
   .hero-inner{
     position:relative;
+    z-index:2;
     text-align:center;
     display:flex;
     flex-direction:column;
@@ -253,12 +293,12 @@
   .hero h1{
     font-family:"Great Vibes", cursive;
     font-weight:400;
-    font-size:clamp(48px, 8vw, 84px);
+    font-size:clamp(26px, 9.5vw, 88px);
     line-height:0.95;
     letter-spacing:-1px;
     margin:0;
-    text-wrap:balance;
-    color:var(--ember);
+    white-space:nowrap;
+    color:var(--paper-on-ink);
   }
   .hero .dates{
     font-weight:600;
@@ -310,6 +350,38 @@
     border-top:1px solid var(--rule);
     margin:0;
   }
+
+  /* ---------- anniversary message ---------- */
+  .lang-switch{
+    display:flex;
+    gap:6px;
+  }
+  .lang-switch button{
+    font-family:inherit;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--ink-on-paper-soft);
+    background:transparent;
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:6px 14px;
+    cursor:pointer;
+  }
+  .lang-switch button.active{
+    background:var(--ember);
+    border-color:var(--ember);
+    color:#fff;
+  }
+  .anniversary-copy p{
+    font-size:16.5px;
+    line-height:1.75;
+    color:var(--ink-on-paper-soft);
+    max-width:64ch;
+    margin:0 0 14px;
+  }
+  .anniversary-copy p:last-child{margin-bottom:0;}
 
   /* ---------- general info ---------- */
   .stat-row{
@@ -529,15 +601,20 @@
       </details>
       <a href="#dj">DJ</a>
       <a href="#schedule">Schedule &amp; Location</a>
-      <span class="lang">EN <span aria-hidden="true">/</span> FR</span>
+      <span class="lang">EN <span aria-hidden="true">·</span> FR <span aria-hidden="true">·</span> ES</span>
     </nav>
     <a class="btn btn-jade" href="#tickets">Tickets</a>
   </div>
 </header>
 
 <section class="hero" id="hero">
+  <div class="hero-clouds" aria-hidden="true">
+    <span class="cloud-a"></span>
+    <span class="cloud-b"></span>
+    <span class="cloud-c"></span>
+  </div>
   <div class="wrap hero-inner">
-    <h1>Lyon Tango<br/>Festival</h1>
+    <h1>Lyon Tango Festival</h1>
     <p class="dates">Dates to be announced</p>
     <div class="hero-actions">
       <a class="btn btn-jade" href="#tickets">Tickets</a>
@@ -555,6 +632,36 @@
 </section>
 
 <main>
+  <section id="anniversary" class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>10th Anniversary</h2>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang-btn="en" class="active">EN</button>
+        <button type="button" data-lang-btn="fr">FR</button>
+        <button type="button" data-lang-btn="es">ES</button>
+      </div>
+    </div>
+    <div class="anniversary-copy">
+      <div data-lang="en">
+        <p>&ldquo;For nearly ten years, we have been building this festival with the same desire: to create a sincere, warm, and vibrant space where people can meet, dance, share, and truly feel connected.&rdquo;</p>
+        <p>&ldquo;Welcome to the 10th edition of the Lyon Tango Festival. ✨&rdquo;</p>
+      </div>
+      <div data-lang="fr" hidden>
+        <p>&laquo;&nbsp;Depuis bient&ocirc;t dix ans, nous faisons grandir ce festival avec la m&ecirc;me envie&nbsp;: cr&eacute;er un espace sinc&egrave;re, chaleureux et vivant, o&ugrave; les gens peuvent se rencontrer, danser, partager et se sentir pleinement &agrave; leur place.&nbsp;&raquo;</p>
+        <p>&laquo;&nbsp;Bienvenue &agrave; la 10&#7497; &eacute;dition du Lyon Tango Festival. ✨&nbsp;&raquo;</p>
+      </div>
+      <div data-lang="es" hidden>
+        <p>&laquo;Desde hace casi diez a&ntilde;os, construimos este festival con el mismo deseo: crear un espacio sincero, c&aacute;lido y vivo, donde las personas puedan encontrarse, bailar, compartir y sentirse verdaderamente conectadas.&raquo;</p>
+        <p>&laquo;Bienvenidos a la 10&ordf; edici&oacute;n del Lyon Tango Festival. ✨&raquo;</p>
+      </div>
+      <p class="lede" style="margin-top:14px;">— from the festival's 10th-anniversary announcement</p>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"/></div>
+
   <section id="about" class="wrap">
     <div class="section-head">
       <div>
@@ -564,7 +671,7 @@
     <div class="stat-row">
       <div class="stat"><b>9</b><span>Visiting couples</span></div>
       <div class="stat"><b>1</b><span>Live ensemble</span></div>
-      <div class="stat"><b>2</b><span>Languages — EN / FR</span></div>
+      <div class="stat"><b>3</b><span>Languages — EN / FR / ES</span></div>
     </div>
     <p class="collab">In collaboration with TNT Lyon Tango and Lyon Tango Festival.</p>
   </section>
@@ -695,6 +802,14 @@
   }, { threshold: 0 });
   io.observe(hero);
 })();
+
+document.querySelectorAll('[data-lang-btn]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var lang = btn.getAttribute('data-lang-btn');
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    document.querySelectorAll('[data-lang]').forEach(function(block){ block.hidden = block.getAttribute('data-lang') !== lang; });
+  });
+});
 </script>
 
 </body>
