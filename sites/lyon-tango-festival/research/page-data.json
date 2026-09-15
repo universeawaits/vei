@@ -1,0 +1,950 @@
+[
+  {
+    "url": "https://lyontangofestival.com/",
+    "slug": "home",
+    "title": "Lyon Tango Festival",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "34px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "2px",
+      "textTransform": "none"
+    },
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci",
+    "slug": "en-teachers-joe-corbata-and-lucila-cionci",
+    "title": "Lucila Cionci & Joe Corbata",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/joe-corbata-and-lucila-cionci"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/ariadna-neveri",
+    "slug": "en-teachers-ariadna-neveri",
+    "title": "Ariadna Naveira & Fernando Sanchez",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/ariadna-neveri"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and",
+    "slug": "en-teachers-soledad-larretapia-and",
+    "title": "Monica Romero & Omar Ocampo",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/los-ocampo"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and",
+    "slug": "en-teachers-juana-sepulveda-and",
+    "title": "Juana Sepulveda & Chicho Frumboli",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/juana-sepulveda-and"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/indira-hiayes-and",
+    "slug": "en-teachers-indira-hiayes-and",
+    "title": "Indira Hiayes & Rodrigo Palacios",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/indira-hiayes-and"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/new-dancers-page-3",
+    "slug": "en-teachers-new-dancers-page-3",
+    "title": "Virginia Gomez & Christian Marquez",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/los-totis"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  },
+  {
+    "url": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante",
+    "slug": "en-teachers-roxana-suarez-and-dante",
+    "title": "Roxana Suarez & Dante Sanchez",
+    "body": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgb(0, 2, 43)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "h1": {
+      "fontFamily": "\"Great Vibes\", cursive",
+      "fontSize": "50px",
+      "fontWeight": "400",
+      "color": "rgb(208, 2, 27)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "-1.5px",
+      "textTransform": "none"
+    },
+    "h2": null,
+    "nav": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "letterSpacing": "normal",
+      "textTransform": "none"
+    },
+    "button": {
+      "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "15.4px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(12, 150, 69)",
+      "letterSpacing": "1.54px",
+      "textTransform": "none"
+    },
+    "bgColors": [
+      "rgb(0, 2, 43)",
+      "rgb(6, 10, 45)",
+      "rgb(221, 221, 221)",
+      "rgb(208, 2, 27)",
+      "rgb(0, 0, 0)",
+      "rgb(12, 150, 69)"
+    ],
+    "textColors": [
+      "rgb(0, 0, 0)",
+      "rgb(51, 51, 51)",
+      "rgb(208, 2, 27)",
+      "rgb(255, 255, 255)",
+      "rgb(66, 130, 235)",
+      "rgb(111, 255, 85)"
+    ],
+    "navLinks": [
+      {
+        "text": "Lucila Cionci & Joe Corbata",
+        "href": "https://lyontangofestival.com/en/teachers/joe-corbata-and-lucila-cionci"
+      },
+      {
+        "text": "Ariadna Naveira & Fernando Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/ariadna-neveri"
+      },
+      {
+        "text": "Monica Romero & Omar Ocampo",
+        "href": "https://lyontangofestival.com/en/teachers/soledad-larretapia-and"
+      },
+      {
+        "text": "Juana Sepulveda & Chicho Frumboli",
+        "href": "https://lyontangofestival.com/en/teachers/juana-sepulveda-and"
+      },
+      {
+        "text": "Indira Hiayes & Rodrigo Palacios",
+        "href": "https://lyontangofestival.com/en/teachers/indira-hiayes-and"
+      },
+      {
+        "text": "Virginia Gomez & Christian Marquez",
+        "href": "https://lyontangofestival.com/en/teachers/new-dancers-page-3"
+      },
+      {
+        "text": "Roxana Suarez & Dante Sanchez",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "Vanesa Villalba & Facundo Piñero",
+        "href": "https://lyontangofestival.com/en/teachers/vanesa-villalba-and-facundo-pinero"
+      },
+      {
+        "text": "Agustina Piaggio & Carlos Espinoza",
+        "href": "https://lyontangofestival.com/en/teachers/agustina-piaggio"
+      },
+      {
+        "text": "Ensemble Sin Vuelta Orquesta",
+        "href": "https://lyontangofestival.com/en/live-music/ensemble-sin-vuelta-orquesta"
+      },
+      {
+        "text": "DJ",
+        "href": "https://lyontangofestival.com/en/dj"
+      },
+      {
+        "text": "Schedule & Location",
+        "href": "https://lyontangofestival.com/en/schedule-location"
+      },
+      {
+        "text": "English",
+        "href": "https://lyontangofestival.com/en/teachers/roxana-suarez-and-dante"
+      },
+      {
+        "text": "French",
+        "href": "https://lyontangofestival.com/fr/enseignants/roxana-suarez-and-dante"
+      }
+    ],
+    "sections": [],
+    "footerText": "Lyon Tango Festival\nGENERAL INFO\n \nTEACHERS\n \nDJ\n \nSCHEDULE & LOCATION\n\nIn collaboration with TNT Lyon Tango and Lyon Tango Festival \n«Salle des fêtes de La Garenne» - 60 avenue Général Eisenhower 69005, Lyon\n\nEmail: tangopasion19@gmail.com\n\nWhatsApp: +33616184115"
+  }
+]

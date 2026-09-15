@@ -1,3 +1,8 @@
 node_modules/
-*.log
-.DS_Store
+_site/
+
+# raw scraped material from source sites (their HTML/screenshots/logo files) —
+# kept locally for design reference, not redistributed via the public repo
+sites/*/research/raw-html/
+sites/*/research/screenshots/
+sites/*/research/assets/
